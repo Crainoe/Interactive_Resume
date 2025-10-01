@@ -1,0 +1,28 @@
+{
+  "name": "interactive-resume",
+  "version": "1.0.0",
+  "description": "Interactive Resume Web Application",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --open=index.html",
+    "dev": "live-server --port=3000 --open=index.html --watch=.",
+    "format": "prettier --write \"**/*.{html,css,js}\"",
+    "lint": "eslint js/*.js",
+    "lint:fix": "eslint js/*.js --fix",
+    "build": "echo 'No build process needed for vanilla JS project'",
+    "deploy": "echo 'Deploy to your preferred hosting service'"
+  },
+  "keywords": [
+    "resume",
+    "portfolio",
+    "javascript",
+    "web-app"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.36.0",
+    "live-server": "^1.2.2",
+    "prettier": "^3.6.2"
+  }
+}
