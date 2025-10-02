@@ -904,6 +904,26 @@ body {
   transform: translateY(-2px);
 }
 
+/* CV Link Styling */
+.cv-link {
+  color: var(--accent-color) !important;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  transition: var(--transition);
+}
+
+.cv-link:hover {
+  color: #ffffff !important;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
   from {
