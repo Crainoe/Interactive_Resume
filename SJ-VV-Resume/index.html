@@ -613,9 +613,27 @@
           <form
             class="contact-form"
             id="contact-form"
-            action="https://formspree.io/sjvv07@gmail.com"
+            action="https://api.web3forms.com/submit"
             method="POST"
           >
+            <!-- Web3Forms Access Key -->
+            <input
+              type="hidden"
+              name="access_key"
+              value="3bb05379-d8f3-447f-9b59-d0bccf22d476"
+            />
+            <!-- Redirect after successful submission -->
+            <input
+              type="hidden"
+              name="redirect"
+              value="https://crainoe.github.io/Interactive_Resume/SJ-VV-Resume/?message=success"
+            />
+            <!-- Send to your email -->
+            <input
+              type="hidden"
+              name="from_name"
+              value="Portfolio Contact Form"
+            />
             <div class="form-group">
               <input type="text" id="name" name="name" required />
               <label for="name">Your Name</label>
@@ -637,22 +655,6 @@
               ></textarea>
               <label for="message">Your Message</label>
             </div>
-            <!-- Hidden field to specify your email -->
-            <input type="hidden" name="_to" value="sjvv07@gmail.com" />
-            <!-- Redirect after successful submission -->
-            <input
-              type="hidden"
-              name="_next"
-              value="https://crainoe.github.io/Interactive_Resume/SJ-VV-Resume/?message=success"
-            />
-            <!-- Subject line for the email -->
-            <input
-              type="hidden"
-              name="_subject"
-              value="New Contact Form Submission from Portfolio"
-            />
-            <!-- Disable captcha for cleaner UX -->
-            <input type="hidden" name="_captcha" value="false" />
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
         </div>
