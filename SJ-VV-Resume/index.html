@@ -610,7 +610,12 @@
               </div>
             </div>
           </div>
-          <form class="contact-form" id="contact-form">
+          <form
+            class="contact-form"
+            id="contact-form"
+            action="https://formspree.io/f/xnnqgwkr"
+            method="POST"
+          >
             <div class="form-group">
               <input type="text" id="name" name="name" required />
               <label for="name">Your Name</label>
@@ -632,6 +637,22 @@
               ></textarea>
               <label for="message">Your Message</label>
             </div>
+            <!-- Hidden field to specify your email -->
+            <input type="hidden" name="_to" value="sjvv07@gmail.com" />
+            <!-- Redirect after successful submission -->
+            <input
+              type="hidden"
+              name="_next"
+              value="https://crainoe.github.io/Interactive_Resume/SJ-VV-Resume/?message=success"
+            />
+            <!-- Subject line for the email -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Contact Form Submission from Portfolio"
+            />
+            <!-- Disable captcha for cleaner UX -->
+            <input type="hidden" name="_captcha" value="false" />
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
         </div>

@@ -233,10 +233,19 @@ function initContactForm() {
 
   if (!contactForm) return;
 
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+  // Check for success message in URL
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("message") === "success") {
+    showNotification(
+      "Thank you! Your message has been sent successfully!",
+      "success"
+    );
+    // Clean URL by removing the query parameter
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
 
-    // Get form data
+  contactForm.addEventListener("submit", function (e) {
+    // Get form data for validation
     const formData = new FormData(this);
     const data = {
       name: formData.get("name"),
@@ -245,9 +254,10 @@ function initContactForm() {
       message: formData.get("message"),
     };
 
-    // Validate form
+    // Validate form before submission
     if (!validateForm(data)) {
-      return;
+      e.preventDefault();
+      return false;
     }
 
     // Show loading state
@@ -256,13 +266,8 @@ function initContactForm() {
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
 
-    // Simulate form submission (replace with actual submission logic)
-    setTimeout(() => {
-      showNotification("Message sent successfully!", "success");
-      contactForm.reset();
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-    }, 2000);
+    // Let the form submit naturally to Formspree
+    // The form will redirect to the success page
   });
 }
 
